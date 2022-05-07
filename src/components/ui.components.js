@@ -113,7 +113,7 @@ const Layout = ({ children }) => {
         <div className='relative'>
             {
                 menuItems.map(menu => (
-                    <div className="flex  select-none items-center space-x-4 mr-5 text-base" key={menu.route} onClick={() => toRoute(menu.route, { replace: true })}>
+                    <div className="flex select-none items-center space-x-4 mr-5 text-sm lg:text-base" key={menu.route} onClick={() => toRoute(menu.route, { replace: true })}>
                         <div
                             className={`w-1 py-4 rounded-xl bg-primary-50 duration-300 ${pathname === menu.route ? "opacity-100" : "opacity-0"
                                 }`}
