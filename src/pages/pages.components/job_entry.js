@@ -17,7 +17,7 @@ export const JobEntry = () => {
     return (
         <Layout>
             <p className="text-sm lg:py-8 lg:text-base">Job Entry</p>
-            <div className="py-8">
+            <div className="py-8 mb-10">
                 <form className="grid lg:grid-cols-2 gap-6 md:pr-60">
                     <div className="col-span-2 lg:col-span-1">
                         <SelectField label='Client' options={clients} requird />
