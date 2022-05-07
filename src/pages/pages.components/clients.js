@@ -34,7 +34,7 @@ export const Clients = () => {
                                 <p>Name</p>
                                 <p className="text-xs font-light">phone</p>
                             </th>
-                            <th className='col-span-2'>Job ID</th>
+                            <th className='col-span-2'>Username</th>
                             <th className='col-span-1'>Actions</th>
                         </tr>
                     </thead>

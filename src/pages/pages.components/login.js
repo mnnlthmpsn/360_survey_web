@@ -13,7 +13,6 @@ export const Login = () => {
 
     const login = async e => {
         e.preventDefault()
-        localStorage.setItem('qqrv', 'why la')
         // initDataFetching(user)
         navigator('/', { replace: true})
     }
@@ -45,7 +44,9 @@ export const Login = () => {
 
             {/* image carousel */}
             <div className="hidden lg:block grow h-screen bg-primary-50">
-
+                <div className="flex h-full w-full items-center justify-center">
+                    <p className="text-white font-light">Something goes here</p>
+                </div>
             </div>
         </div>
     )

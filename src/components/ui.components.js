@@ -149,7 +149,7 @@ const Layout = ({ children }) => {
                             <p className="text-white font-light lg:font-semibold text-md lg:text-gray-600"><span className='font-light text-xs'>Welcome</span> Kwame</p>
                             <MenuAlt3Icon className='text-white h-5 w-auto lg:hidden' onClick={() => setToggle(true)} />
                             <div className='group relative cursor-pointer'>
-                                <LogoutIcon className='text-primary-50 h-5 w-auto hidden lg:block' />
+                                <LogoutIcon className='text-primary-50 h-5 w-auto hidden lg:block' onClick={() => toRoute('/login', { replace: true })} />
                                 <p className='text-xs absolute border rounded py-2 px-6 right-5 bg-white group-hover:block hidden duration-300'>logout</p>
                             </div>
                         </div>
