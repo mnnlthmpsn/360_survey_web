@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom"
 
-function App() {
+import { ProtectedRoute } from "./components/utils.components"
+
+// pages
+import { Login, Dashboard, AddUser, Jobs, Clients, JobEntry } from "./pages"
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Routes>
+      <Route element={<Login />} path="login" />
+      <Route element={
+        <ProtectedRoute>
+          <Dashboard />
+        </ProtectedRoute>
+      } path="/" />
+      <Route element={
+        <ProtectedRoute>
+          <AddUser />
+        </ProtectedRoute>
+      } path="add_user" />
+      <Route element={
+        <ProtectedRoute>
+          <Jobs />
+        </ProtectedRoute>
+      } path="jobs" />
+      <Route element={
+        <ProtectedRoute>
+          <Clients />
+        </ProtectedRoute>
+      } path="clients" />
+      <Route element={
+        <ProtectedRoute>
+          <JobEntry />
+        </ProtectedRoute>
+      } path="job_entry" />
+    </Routes>
+  )
 }
 
-export default App;
+export default App

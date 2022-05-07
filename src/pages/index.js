@@ -1,0 +1,6 @@
+export { Login } from './pages.components/login'
+export { Dashboard } from './pages.components/dashboard'
+export { AddUser } from './pages.components/add_user'
+export { Jobs } from './pages.components/jobs'
+export { JobEntry } from './pages.components/job_entry'
+export { Clients } from './pages.components/clients'
