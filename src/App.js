@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import { ProtectedRoute } from "./components/utils.components"
 
 // pages
-import { Login, Dashboard, AddUser, Jobs, Clients, JobEntry } from "./pages"
+import { Login, AddUser, Jobs, Clients, JobEntry } from "./pages"
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <Route element={<Login />} path="login" />
       <Route element={
         <ProtectedRoute>
-          <Dashboard />
+          <Clients />
         </ProtectedRoute>
       } path="/" />
       <Route element={
