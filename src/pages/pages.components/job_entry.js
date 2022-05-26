@@ -49,7 +49,7 @@ export const JobEntry = () => {
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='---' placeholder="4453WSD" value={job.reg_num} onChange={e => setJob({ ...job, reg_num: e.target.value })} required />
+                        <TextField label='Registration Number' placeholder="---" value={job.reg_num} onChange={e => setJob({ ...job, reg_num: e.target.value })} required />
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
