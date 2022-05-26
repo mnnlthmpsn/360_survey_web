@@ -1,5 +1,5 @@
 import { BriefcaseIcon, DocumentAddIcon, DocumentDuplicateIcon, MenuAlt3Icon, SearchIcon, TrashIcon, XIcon } from '@heroicons/react/solid'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import { logo } from '../images';
@@ -118,6 +118,7 @@ const showToast = (type, message) => {
 const Layout = ({ children }) => {
 
     const [toggle, setToggle] = useState(false)
+    const [currentUser, setCurrentUser] = useState('')
 
     const toRoute = useNavigate()
     const { pathname } = useLocation()
@@ -134,6 +135,11 @@ const Layout = ({ children }) => {
         { title: 'Jobs', icon: <DocumentDuplicateIcon className='h-6 w-auto' />, route: '/jobs' },
         { title: 'Job Entry', icon: <DocumentAddIcon className='h-6 w-auto' />, route: '/job_entry' },
     ]
+
+    useEffect(() => {
+        const username = sessionStorage.getItem('qqrv')
+        setCurrentUser(JSON.parse(username))
+    }, [])
 
     const buildMenuItems = () => (
         <div className='relative'>
@@ -172,7 +178,7 @@ const Layout = ({ children }) => {
                 <div className="flex flex-col">
                     <div className="h-16 flex-none border-b bg-primary-50 lg:bg-gray-50 sticky z-10 inset-0">
                         <div className="flex items-center justify-between h-full items-center px-8">
-                            <p className="text-white font-light lg:font-semibold text-md lg:text-gray-600"><span className='font-light text-xs'>Welcome</span> Kwame</p>
+                            <p className="text-white font-light lg:font-semibold text-md lg:text-gray-600"><span className='font-light text-xs'>Welcome</span> <span className='capitalize'>{currentUser}</span></p>
                             <MenuAlt3Icon className='text-white h-5 w-auto lg:hidden' onClick={() => setToggle(true)} />
                             <p className='text-sm hidden lg:block cursor-pointer' onClick={logout}>Logout</p>
                         </div>
@@ -186,7 +192,7 @@ const Layout = ({ children }) => {
             {/* mobile menu items */}
             <div className={`absolute z-20 bg-white p-8 duration-150 ${toggle ? 'h-screen w-screen opacity-100' : 'h-0 w-0 opacity-0'}`}>
                 <div className="flex items-center justify-between">
-                    <p onClick={() => console.log('you did')}>Welcome Kwame</p>
+                    <p onClick={() => console.log('you did')}>Welcome <span className='capitalize'>{currentUser}</span></p>
                     <XIcon className='h-5 w-auto' onClick={() => setToggle(false)} />
                 </div>
                 <p className='font-light text-sm'>Browse menu...</p>

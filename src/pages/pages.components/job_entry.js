@@ -27,7 +27,7 @@ export const JobEntry = () => {
             console.log(data)
 
             // fix this duplicate later
-            showToast('info', data.message)
+            showToast(data.status === 0 ? 'success' : 'error', data.message)
         }
         catch (e) {
             showToast('error', e)
@@ -45,19 +45,19 @@ export const JobEntry = () => {
             <div className="py-8 mb-10">
                 <form className="grid lg:grid-cols-2 gap-6 md:pr-60" onSubmit={createJob}>
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='Client' value={job.client_user} onChange={e => setJob({ ...job, client_user: e.target.value })} placeholder="username" required />
+                        <TextField label='Client Username' value={job.client_user} onChange={e => setJob({ ...job, client_user: e.target.value })} placeholder="username" required />
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='Reg Number' placeholder="4453WSD" value={job.reg_num} onChange={e => setJob({ ...job, reg_num: e.target.value })} required />
+                        <TextField label='---' placeholder="4453WSD" value={job.reg_num} onChange={e => setJob({ ...job, reg_num: e.target.value })} required />
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='Co-ordinates' placeholder="234456" value={job["co-ordinates"]} onChange={e => setJob({ ...job, "co-ordinates": e.target.value })} required />
+                        <TextField label='Co-ordinates' placeholder="41°24’12.2″N   2°10’26.5″E" value={job["co-ordinates"]} onChange={e => setJob({ ...job, "co-ordinates": e.target.value })} />
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='Site Location' placeholder="Dansoman" value={job.site_location} onChange={e => setJob({ ...job, site_location: e.target.value })} required />
+                        <TextField label='Site' placeholder="Dansoman" value={job.site_location} onChange={e => setJob({ ...job, site_location: e.target.value })} required />
                     </div>
 
                     <div className="col-span-2">
@@ -69,7 +69,7 @@ export const JobEntry = () => {
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='Comments' placeholder='...this is behind the mast :)' value={job.status_comments} onChange={e => setJob({ ...job, status_comments: e.target.value })} required />
+                        <TextField label='Comments' placeholder='Enter brief comment here' value={job.status_comments} onChange={e => setJob({ ...job, status_comments: e.target.value })} required />
                     </div>
 
                     <div className="col-span-2">

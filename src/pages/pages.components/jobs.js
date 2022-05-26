@@ -45,7 +45,7 @@ export const Jobs = () => {
             showToast('success', "Job list updated successfully")
         }
         else {
-            showToast('info', data.message)
+            showToast('error', data.message)
         }
     }, [])
 
@@ -56,7 +56,7 @@ export const Jobs = () => {
         if (data.status === 0) {
             setShowModal(true)
         } else {
-            showToast('info', data.message)
+            showToast('error', data.message)
         }
     }
 
@@ -145,9 +145,9 @@ export const Jobs = () => {
                 {/* large to extra large screens */}
                 <table className='hidden lg:flex flex-col space-y-3'>
                     <thead>
-                        <tr className='grid grid-cols-8 flex w-auto text-sm text-left gap-x-5 px-2 py-4 border mt-5 rounded-md bg-gray-50'>
+                        <tr className='grid grid-cols-7 flex w-auto text-sm text-left gap-x-5 px-2 py-4 border mt-5 rounded-md bg-gray-50'>
                             <th className='col-span-1 text-center'>#</th>
-                            <th className='col-span-2 text-start'>Entry Date</th>
+                            <th className='col-span-1 text-start'>Entry Date</th>
                             <th className='col-span-1'>Job ID</th>
                             <th className='col-span-1'>Status</th>
                             <th className='col-span-1'>Client</th>
@@ -158,10 +158,10 @@ export const Jobs = () => {
                     <tbody>
                         {
                             jobs.map((job, i) => (
-                                <tr className='grid grid-cols-8 flex w-auto text-left text-md items-center rounded-md font-light gap-x-5 px-2 py-4 hover:bg-gray-50 duration-200' key={job.jobs_id}>
+                                <tr className='grid grid-cols-7 flex w-auto text-left text-md items-center rounded-md font-light gap-x-5 px-2 py-4 hover:bg-gray-50 duration-200' key={job.jobs_id}>
                                     <th className='col-span-1 text-sm text-center'>{i + 1} </th>
-                                    <th className='col-span-2 text-sm'>{job.entry_date}</th>
-                                    <td className='col-span-1 text-sm'>{job.reg_num}</td>
+                                    <th className='col-span-1 text-sm'>{job.entry_date}</th>
+                                    <td className='col-span-1 text-sm hover:underline hover:text-blue-600 duration-200 cursor-pointer'>{job.reg_num}</td>
                                     <td className='col-span-1 text-sm'>{job.status}</td>
                                     <td className='col-span-1 text-sm'>{job.client}</td>
                                     <td className='col-span-2 flex space-x-2 text-sm font-bold'>{job.description}</td>
