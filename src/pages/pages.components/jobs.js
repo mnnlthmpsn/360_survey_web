@@ -1,7 +1,7 @@
-import { PencilAltIcon, SearchIcon, TrashIcon, XIcon } from "@heroicons/react/solid"
+import { SearchIcon, XIcon } from "@heroicons/react/solid"
 import { useCallback, useEffect, useState } from "react"
 import { ToastContainer } from "react-toastify"
-import { Button, JobCard, Layout, SelectField, showToast, TextAreaField } from "../../components/ui.components"
+import { Button, JobCard, Layout, Loader, SelectField, showToast, TextAreaField } from "../../components/ui.components"
 import { usePostHook } from "../../hooks/hooks"
 
 export const Jobs = () => {
@@ -79,14 +79,6 @@ export const Jobs = () => {
 
     }
 
-    const _renderLoader = () => {
-        return (
-            <div className="h-screen w-screen flex items-center justify-center fixed inset-0 bg-gray-50 opacity-80 z-10">
-                <p>...loading</p>
-            </div>
-        )
-    }
-
     const _renderModal = () => {
         return (
             <div className="absolute inset-0 h-screen w-screen flex items-center justify-center">
@@ -122,13 +114,13 @@ export const Jobs = () => {
 
     return (
         <Layout>
-            {(getJobs.isLoading || fetchSingleJob.isLoading || updateJobFunc.isLoading) && _renderLoader()}
+            {(getJobs.isLoading || fetchSingleJob.isLoading || updateJobFunc.isLoading) && Loader()}
             {showModal === true && _renderModal()}
 
             <div className='md:w-1/2 lg:w-1/3 sticky inset-0'>
                 <div className="space-y-1">
                     <form className='border hover:border-primary-100 duration-200 rounded-md relative flex items-center pl-4 pr-12' onSubmit={search}>
-                        <input onChange={e => setSearchItem(e.target.value)} value={searchItem} className="outline-none w-full h-full py-3 text-sm font-semibold" placeholder="Search Client" />
+                        <input onChange={e => setSearchItem(e.target.value)} value={searchItem} className="outline-none w-full h-full py-3 text-sm font-semibold" placeholder="Enter Job ID" />
                         <div className="absolute right-5 cursor-pointer" onClick={search}>
                             <SearchIcon className='h-5 w-auto' />
                         </div>

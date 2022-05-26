@@ -199,4 +199,12 @@ const Layout = ({ children }) => {
     )
 }
 
-export { TextField, SearchField, SelectField, Button, Layout, ContactCard, JobCard, TextAreaField, showToast}
+const Loader = () => {
+    return (
+        <div className="h-screen w-screen flex items-center justify-center fixed inset-0 bg-gray-50 opacity-80 z-10">
+            <p>...loading</p>
+        </div>
+    )
+}
+
+export { TextField, SearchField, SelectField, Button, Layout, ContactCard, JobCard, TextAreaField, showToast, Loader}

@@ -1,14 +1,14 @@
 import { PencilAltIcon, SearchIcon, TrashIcon } from "@heroicons/react/solid"
 import { useEffect, useState } from "react"
 import { ToastContainer } from "react-toastify"
-import { ContactCard, Layout, showToast } from "../../components/ui.components"
+import { ContactCard, Layout, Loader, showToast } from "../../components/ui.components"
 import { usePostHook } from "../../hooks/hooks"
 
 export const Clients = () => {
 
-    const [data, setData, error] = useState([])
+    const [data, setData] = useState([])
 
-    const { initDataFetching } = usePostHook('fetch_all_users_admin')
+    const { initDataFetching, isLoading } = usePostHook('fetch_all_users_admin')
 
     const getClients = async () => {
         try {
@@ -27,6 +27,7 @@ export const Clients = () => {
 
     return (
         <Layout>
+            { isLoading && Loader() }
             <div className='md:w-1/2 lg:w-1/3 sticky inset-0'>
                 <div className="space-y-1">
                     <div className='border hover:border-primary-100 duration-200 rounded-md relative flex items-center pl-4 pr-12'>
