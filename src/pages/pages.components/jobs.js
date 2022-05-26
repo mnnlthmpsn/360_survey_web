@@ -148,7 +148,8 @@ export const Jobs = () => {
                         <tr className='grid grid-cols-8 flex w-auto text-sm text-left gap-x-5 px-2 py-4 border mt-5 rounded-md bg-gray-50'>
                             <th className='col-span-1 text-center'>#</th>
                             <th className='col-span-2 text-start'>Entry Date</th>
-                            <th className='col-span-2'>Job ID</th>
+                            <th className='col-span-1'>Job ID</th>
+                            <th className='col-span-1'>Status</th>
                             <th className='col-span-1'>Client</th>
                             <th className='col-span-2'>Description</th>
                         </tr>
@@ -160,7 +161,8 @@ export const Jobs = () => {
                                 <tr className='grid grid-cols-8 flex w-auto text-left text-md items-center rounded-md font-light gap-x-5 px-2 py-4 hover:bg-gray-50 duration-200' key={job.jobs_id}>
                                     <th className='col-span-1 text-sm text-center'>{i + 1} </th>
                                     <th className='col-span-2 text-sm'>{job.entry_date}</th>
-                                    <td className='col-span-2 text-sm'>{job.reg_num}</td>
+                                    <td className='col-span-1 text-sm'>{job.reg_num}</td>
+                                    <td className='col-span-1 text-sm'>{job.status}</td>
                                     <td className='col-span-1 text-sm'>{job.client}</td>
                                     <td className='col-span-2 flex space-x-2 text-sm font-bold'>{job.description}</td>
                                 </tr>
