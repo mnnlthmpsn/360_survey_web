@@ -51,7 +51,7 @@ export const JobDetails = () => {
             <p className="mb-6">Statuses</p>
             { 
                 jobDetails.output2?.map((item, i) => (
-                    <div className="flex flex-col relative justify-center border-l space-y-4 p-10" key={item.reg_num}>
+                    <div className="flex flex-col relative justify-center border-l space-y-4 py-4 px-10" key={item.reg_num}>
                         <p className="absolute -left-4 rounded-full bg-green-500 flex text-xs items-center text-white justify-center h-8 w-8">{i + 1 }</p>
                         <p className="text-xs">{item.date}</p>
                         <p className="font-light">{item.status_comments}</p>
