@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom"
-
 import { ProtectedRoute } from "./components/utils.components"
 
 // pages
-import { Login, AddUser, Jobs, Clients, JobEntry } from "./pages"
+import { Login, AddUser, Jobs, Clients, JobEntry, JobDetails } from "./pages"
 
 const App = () => {
   return (
@@ -24,6 +23,11 @@ const App = () => {
           <Jobs />
         </ProtectedRoute>
       } path="jobs" />
+      <Route element={
+        <ProtectedRoute>
+          <JobDetails />
+        </ProtectedRoute>
+      } path="job_details/:reg_num" />
       <Route element={
         <ProtectedRoute>
           <Clients />

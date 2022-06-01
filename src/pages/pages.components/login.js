@@ -40,10 +40,10 @@ export const Login = () => {
 
                     {/* form */}
                     <form className="w-full space-y-6" autoComplete="false" autoSave="false" onSubmit={login}>
-                        <TextField label="Username" placeholder='mnnlthmpsn' onChange={e => setUser({ ...user, username: e.target.value })} />
-                        <TextField label="Password" type='password' placeholder='**********' onChange={e => setUser({ ...user, password: e.target.value })} />
+                        <TextField label="Username" placeholder='mnnlthmpsn' onChange={e => setUser({ ...user, username: e.target.value })} disabled={isLoading} />
+                        <TextField label="Password" type='password' placeholder='**********' onChange={e => setUser({ ...user, password: e.target.value })} disabled={isLoading} />
                         <p className="text-sm hover:underline duration-200 cursor-pointer select-none">Forgot Password?</p>
-                        <Button isloading={isLoading.toString()} type='submit' />
+                        <Button isloading={isLoading.toString()} type='submit' disabled={isLoading}/>
                     </form>
                 </div>
             </div>

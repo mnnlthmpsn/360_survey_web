@@ -1,5 +1,6 @@
 import { SearchIcon, XIcon } from "@heroicons/react/solid"
 import { useCallback, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 import { ToastContainer } from "react-toastify"
 import { Button, JobCard, Layout, Loader, SelectField, showToast, TextAreaField } from "../../components/ui.components"
 import { usePostHook } from "../../hooks/hooks"
@@ -14,6 +15,7 @@ export const Jobs = () => {
     const [searchItem, setSearchItem] = useState('')
     const [showModal, setShowModal] = useState(false)
     const [currentUser, setCurrentUser] = useState('')
+    const router = useNavigate()
 
     const [jobUpdate, setJobUpdate] = useState({
         reg_num: "",
@@ -22,6 +24,10 @@ export const Jobs = () => {
         updated_by: "",
         key: "1qaz@WSX"
     })
+
+    const toRoute = route => {
+        router(route)
+    }
 
     const options = [
         { key: 'Completed', value: 'Completed' },
@@ -161,7 +167,7 @@ export const Jobs = () => {
                                 <tr className='grid grid-cols-7 flex w-auto text-left text-md items-center rounded-md font-light gap-x-5 px-2 py-4 hover:bg-gray-50 duration-200' key={job.jobs_id}>
                                     <th className='col-span-1 text-sm text-center'>{i + 1} </th>
                                     <th className='col-span-1 text-sm'>{job.entry_date}</th>
-                                    <td className='col-span-1 text-sm hover:underline hover:text-blue-600 duration-200 cursor-pointer'>{job.reg_num}</td>
+                                    <td className='col-span-1 text-sm hover:underline hover:text-blue-600 duration-200 cursor-pointer' onClick={() => toRoute(`/job_details/${job.reg_num}`)}>{job.reg_num}</td>
                                     <td className='col-span-1 text-sm'>{job.status}</td>
                                     <td className='col-span-1 text-sm'>{job.client}</td>
                                     <td className='col-span-2 flex space-x-2 text-sm font-bold'>{job.description}</td>
