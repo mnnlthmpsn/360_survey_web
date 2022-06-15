@@ -27,7 +27,7 @@ export const JobEntry = () => {
             console.log(data)
 
             // fix this duplicate later
-            showToast(data.status === 0 ? 'success' : 'error', data.message)
+            data.status === 0 ? showToast('success', 'User list updated') : showToast('error', data.message)
         }
         catch (e) {
             showToast('error', e)
@@ -57,7 +57,7 @@ export const JobEntry = () => {
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='Site' placeholder="Dansoman" value={job.site_location} onChange={e => setJob({ ...job, site_location: e.target.value })} required />
+                        <TextField label='Site' placeholder="---" value={job.site_location} onChange={e => setJob({ ...job, site_location: e.target.value })} required />
                     </div>
 
                     <div className="col-span-2">

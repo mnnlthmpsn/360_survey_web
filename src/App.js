@@ -17,7 +17,7 @@ const App = () => {
         <ProtectedRoute>
           <AddUser />
         </ProtectedRoute>
-      } path="add_user" />
+      } path="add_client" />
       <Route element={
         <ProtectedRoute>
           <Jobs />
