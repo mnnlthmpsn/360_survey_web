@@ -41,7 +41,7 @@ export const Login = () => {
 
                         {/* form */}
                         <form className="w-full space-y-6" autoComplete="false" autoSave="false" onSubmit={login}>
-                            <TextField label="Username" placeholder='mnnlthmpsn' onChange={e => setUser({ ...user, username: e.target.value })} disabled={isLoading} />
+                            <TextField label="Username" placeholder='username' onChange={e => setUser({ ...user, username: e.target.value })} disabled={isLoading} />
                             <TextField label="Password" type='password' placeholder='**********' onChange={e => setUser({ ...user, password: e.target.value })} disabled={isLoading} />
                             <p className="text-sm hover:underline duration-200 cursor-pointer select-none">Forgot Password?</p>
                             <Button isloading={isLoading.toString()} type='submit' disabled={isLoading} />
@@ -50,9 +50,9 @@ export const Login = () => {
                 </div>
 
                 {/* image carousel */}
-                <div className="hidden lg:block grow h-screen bg-primary-50">
+                <div className="hidden lg:block grow h-screen bg-[#e6e6e6]">
                     <div className="flex h-full w-full items-center justify-center">
-                        <p className="text-white font-light">Something goes here</p>
+                        <img className="object-cover h-full w-full" src="https://images.unsplash.com/photo-1628155858736-bacadae33a88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fFN1cnZleWluZyUyMHRyaXBvZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=2400&q=2400" alt="" srcset="" />
                     </div>
                 </div>
 
