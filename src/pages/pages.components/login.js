@@ -28,7 +28,7 @@ export const Login = () => {
         <Fragment>
             <div className="hidden md:flex h-screen w-screen">
                 {/* login form */}
-                <div className="flex flex-col items-center lg:justify-center py-12 lg:py-48 lg:w-1/2 h-screen">
+                <div className="flex flex-col items-center lg:justify-center py-12 lg:py-48 w-full h-screen">
                     <div className="px-8 w-screen lg:w-3/5 flex flex-col items-start">
                         <div className="flex items-center mb-12 select-none">
                             <img src={logo} alt="logo" className="h-24" />
@@ -52,7 +52,7 @@ export const Login = () => {
                 {/* image carousel */}
                 <div className="hidden lg:block grow h-screen bg-[#e6e6e6]">
                     <div className="flex h-full w-full items-center justify-center">
-                        <img className="object-cover h-full w-full" src="https://images.unsplash.com/photo-1628155858736-bacadae33a88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fFN1cnZleWluZyUyMHRyaXBvZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=2400&q=2400" alt="" srcset="" />
+                        <img className="object-cover object-left h-full w-full" src="https://images.unsplash.com/photo-1628155858736-bacadae33a88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fFN1cnZleWluZyUyMHRyaXBvZHN8ZW58MHx8MHx8&auto=format&fit=crop&w=2400&q=2400" alt="" srcset="" />
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@ export const Login = () => {
             </div>
 
             <div className="md:hidden flex relative items-center justify-center h-screen w-screen p-8">
-                <img src={logo} alt="logo" className="absolute top-24 h-24"/>
+                <img src={logo} alt="logo" className="absolute top-24 h-24" />
                 <p className="text-center">Please use a laptop or Computer for better user experience</p>
             </div>
         </Fragment>

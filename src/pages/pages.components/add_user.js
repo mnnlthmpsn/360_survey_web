@@ -59,19 +59,19 @@ export const AddUser = () => {
             <div className="py-8 mb-10">
                 <form className="grid lg:grid-cols-2 gap-6 md:pr-60" onSubmit={addClient}>
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='Firstname' placeholder="Emmanuel" value={user.firstname} onChange={e => setUser({...user, firstname: e.target.value})} required />
+                        <TextField label='Firstname' placeholder="Firstname" value={user.firstname} onChange={e => setUser({...user, firstname: e.target.value})} required />
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='Lastname' placeholder="Thompson" value={user.lastname} onChange={e => setUser({ ...user, lastname: e.target.value })} required />
+                        <TextField label='Lastname' placeholder="Lastname" value={user.lastname} onChange={e => setUser({ ...user, lastname: e.target.value })} required />
                     </div>
 
                     <div className="col-span-2">
-                        <TextField label='Other Names' placeholder="Ampadu" value={user.othername} onChange={e => setUser({...user, othername: e.target.value})} />
+                        <TextField label='Other Names' placeholder="Other names" value={user.othername} onChange={e => setUser({...user, othername: e.target.value})} />
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
-                        <TextField label='Username' placeholder="mnnlthmpsn" value={user.username} onChange={e => setUser({...user, username: e.target.value})} required />
+                        <TextField label='Username' placeholder="username" value={user.username} onChange={e => setUser({...user, username: e.target.value})} required />
                     </div>
 
                     <div className="col-span-2 lg:col-span-1">
